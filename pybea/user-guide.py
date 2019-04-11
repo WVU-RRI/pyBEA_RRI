@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-import pybea
+
+#import pybea # pip install version
+import pybea_rri as pybea # modified version
 
 # Meta-Data API Methods
 # The BEA API contains three methods for retrieving meta-data as follows:
@@ -106,3 +108,44 @@ data5 = pybea.get_data(USER_ID, DataSetName='RegionalIncome', TableName='CA1', L
 print( data5.head() )
 print( data5.tail() )
 
+
+# Fixed Assets
+# The FixedAssets dataset contains data from the standard set of Fixed Assets tables as published online.
+#data6 = pybea.get_data(USER_ID, DataSetName='FixedAssets', TableID='16', Year='2012', ResultFormat='XML')
+#print( data6.head() )
+#print( data6.tail() )
+
+# RegionalProduct
+# Example Usage
+# Real GDP for all years for all MSAs, in JSON format
+#data7 = pybea.get_data(USER_ID, DataSetName='RegionalProduct', Component="RGDP_MAN", \
+#                      IndustryId=1, GeoFips="MSA", Year="ALL", ResultFormat='XML')
+#print( data7.head() )
+#print( data7.tail() )
+
+# Example Usage
+# GDP for 2012 and 2013 for selected Southeast states, for the Retail Trade industry.
+#southeast_states = ["01000", "05000", "12000", "13000", "21000", "22000", 
+#                    "28000", "37000", "45000", "47000", "51000", "54000"]
+#data8 = pybea.get_data(USER_ID, DataSetName='RegionalProduct', Component="GDP_sAN", IndustryId=35, \
+#                      GeoFips=southeast_states, Year=["2013", "2013"], ResultFormat='XML')
+#print( data8.head() )
+#print( data8.tail() )
+
+# Input Output
+
+# Example Usage
+# Data from The Use of Commodities by Industries, Before Redefinitions (Producer’s Prices) 
+# sector level table for years 2010, 2011, and 2012.
+#data9 = pybea.get_data(USER_ID, DataSetName='InputOutput', TableID=2, \
+#                      Year=['2010', '2011', '2012', '2013'], ResultFormat='JSON')
+#print( data9.head() )
+#print( data9.tail() )
+
+# Example Usage
+# Data for 2007 from The Make of Commodities by Industries, Before Redefinitions sector and 
+# summary level tables.
+#data10 = pybea.get_data(USER_ID, DataSetName='InputOutput', TableID=[46, 47], \
+#                      Year='2007', ResultFormat='JSON')
+#print( data10.head() )
+#print( data10.tail() )

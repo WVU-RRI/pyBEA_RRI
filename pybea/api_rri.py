@@ -11,7 +11,7 @@ class Request(dict):
 
     _response = None
 
-    base_url = 'http://www.bea.gov/api/data'
+    base_url = 'http://apps.bea.gov/api/data'
 
     valid_formats = ['JSON', 'XML']
 
@@ -431,18 +431,18 @@ class ITARequest(DataRequest):
             `Indicator` parameter values correspond to lines in `ITA tables`_.
             Exactly one `Indicator` parameter value must be provided in all
             data requests unless exactly one `AreaOrCountry` parameter value
-            other than “ALL” and “AllCountries” is requested. That is, multiple
+            other than ALL and AllCountries is requested. That is, multiple
             Indicators can only be specified if a single `AreaOrCountry` is
             specified.
         AreaOrCountry : str or list(str)
             The AreaOrCountry parameter specifies the counterparty area or
             country of the transactions. The default parameter value
-            (“AllCountries”) returns the total for all countries, while “All”
+            (AllCountries) returns the total for all countries, while All
             returns all data available by area and country. Exactly one
             `AreaOrCountry` parameter value must be provided in all data
             requests unless exactly one `Indicator` parameter value is
-            requested. This single parameter value may not be either “ALL” or
-            “AllCountries.” That is, a list of countries or the grand total for
+            requested. This single parameter value may not be either ALL or
+            AllCountries. That is, a list of countries or the grand total for
             all countries can only be specified if a single Indicator is
             specified. For information on geographic area definitions, see the
             definitions on the `BEA website`_.
