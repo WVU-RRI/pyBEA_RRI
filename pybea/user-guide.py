@@ -118,10 +118,14 @@ print( data5.tail() )
 # RegionalProduct
 # Example Usage
 # Real GDP for all years for all MSAs, in JSON format
-#data7 = pybea.get_data(USER_ID, DataSetName='RegionalProduct', Component="RGDP_MAN", \
-#                      IndustryId=1, GeoFips="MSA", Year="ALL", ResultFormat='XML')
-#print( data7.head() )
-#print( data7.tail() )
+data6 = pybea.get_data(USER_ID, DataSetName='RegionalProduct', Component="RGDP_MAN", IndustryId=1, \
+                       GeoFips="MSA", Year="ALL", ResultFormat='JSON')
+data7 = pybea.get_data(USER_ID, DataSetName='RegionalProduct', Component="GDP_SAN", IndustryId=1, \
+                       GeoFips="STATE", Year="ALL", ResultFormat='JSON')
+print( data6.head() )
+print( data6.tail() )
+print( data7.head() )
+print( data7.tail() )
 
 # Example Usage
 # GDP for 2012 and 2013 for selected Southeast states, for the Retail Trade industry.
